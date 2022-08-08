@@ -97,7 +97,12 @@ export class AppService implements OnModuleInit {
           await this.receivedMessageService.updateMessageName(receivedMessageEntity, data.message.name);
         }
       } else {
-        let url = `https://api-sv2.simsimi.net/v2/?text=${message}&lc=vn&cf=false`;
+        let url = `https://api.simsimi.net/v2/?text=${message}&lc=vn&key=API-1234-abcd-1234-abcd`;
+
+        console.log("-------message----------");
+        console.log(message);
+        console.log("---------end message--------");
+
         let a = await axios.get(encodeURI(url))
           .then(function (response) {
             console.log("-------return----------");
